@@ -12,4 +12,5 @@ How To Install :-
   1. If on windows run install.bat else run install.sh for linux
   2. Goto backend and start app.py
   3. The Application should be running at localhost:5000
+  4. Ensure you have a redis instance running on your local
    
