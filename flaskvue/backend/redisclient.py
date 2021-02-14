@@ -14,6 +14,9 @@ class Singleton(type):
 
 class RedisClient(object):
 
+    def __init__(self):
+        self.pool = redis.ConnectionPool()
+
     @property
     def conn(self):
         if not hasattr(self, '_conn'):
@@ -21,4 +24,4 @@ class RedisClient(object):
         return self._conn
 
     def getConnection(self):
-        self._conn = redis.from_url(os.environ['REDISCLOUD_URL'])
+        self._conn = redis.Redis(connection_pool=self.pool)
