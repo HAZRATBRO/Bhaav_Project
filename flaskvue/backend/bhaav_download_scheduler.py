@@ -1,6 +1,10 @@
 import requests
 from bs4 import BeautifulSoup
-import zipfile
+import sys
+if sys.version_info >= (3, 6):
+    import zipfile
+else:
+    import zipfile36 as zipfile
 import json
 import pandas as pd
 import redis
